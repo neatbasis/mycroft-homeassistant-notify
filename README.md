@@ -18,5 +18,28 @@ Report an issue, if you find a problem.
 # Setup
 
 1. Clone this repository
-2. Copy the ```mycroft``` directory into the ```custom_components``` directory in your homeassistant ```config``` directory (the directory where the configuration.yml file is)
+2. Copy the ```mycroft``` directory into the ```custom_components``` directory in your homeassistant ```config``` directory (the directory where the configuration.yaml file is)
 3. Keep sending those notifications to your mycroft instance
+
+# Configuration
+
+If you have already configured the mycroft notification core component which was disabled, you will need no further configuration as this component is a drop in replacement for the core component. If you're setting up mycroft notifications for the first time, add this to your Home Assistant configuration.yaml:
+
+```yaml
+# Example configuration.yaml entry
+mycroft:
+  host: 0.0.0.0
+```
+
+Also add the mycroft platform under the notify section to enable notifications
+
+```yaml
+# Example configuration.yaml entry
+notify:
+  - platform: mycroft
+    name: mycroft
+```
+
+# Licence
+
+- Apache 2.0
