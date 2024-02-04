@@ -34,6 +34,10 @@ class MycroftNotificationService(BaseNotificationService):
         """Send a message mycroft to speak on instance."""
 
         if self.bus is not None:
-            self.bus.emit(Message('speak', data={'utterance': message}))
+            try:
+                _LOGGER.debug("Notifying: %s", message)
+                self.bus.emit(Message('speak', data={'utterance': message}))
+            except:
+                _LOGGER.error("Error from mycroft messagebus", exc_info=True)
         else:
-            _LOGGER.log("Could not reach this instance of mycroft")
+            _LOGGER.error("Error in mycroft messagebus initialization")

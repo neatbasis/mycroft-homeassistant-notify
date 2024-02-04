@@ -4,7 +4,7 @@
   "codeowners": ["@NeatBasis"],
   "documentation": "https://www.home-assistant.io/integrations/mycroft",
   "iot_class": "local_push",
-  "loggers": ["mycroft_messagebus_client"],
+  "loggers": ["mycroft_bus_client", "mycroft-messagebus-client"],
   "requirements": ["mycroft-messagebus-client>=0.9.4"],
   "version": "0.0.2"
 }
